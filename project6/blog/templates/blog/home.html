@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#1 Template basics</title>
+</head>
+<body>
+    <h1>Basic Template</h1>
+    <!-- This is a comment -->
+    {# this is recommended comment #}
+    {# this is single line comment #}
+    <p>This is the simple template to demonstrate html structure and comments</p>
+    <p>welcome to blog homepage</p>
+
+     <!-- single variable -->
+      <p>Name:{{name}}</p>
+      <p>Age:{{age}}</p>
+      <p>Skills:{{skills}}</p>
+      <!-- object attributes -->
+       <p>User Name:{{User.name}}</p>
+       <p>User Age:{{User.age}}</p>
+       <!-- dictionary items -->
+        <h2>Blog information</h2>
+        <P>Blog Title:{{blog.title}}</P>
+        <p>Created_at:{{blog.created_at}}</p>
+        <p>Content:{{blog.content}}</p>
+        <p>Content:{{blog.content |safe}}</p>
+        <p>Author:{{blog.author.name}}</p>
+        <p>Quote:{{blog.author.Quote}}</p>
+        <!-- default value -->
+        <p>Default Empty Value:{{empty_vlaue|default:"no value proviede"}}</p>
+        <p>Default Empty Value:{{empty_vlaue|default_if_none:"no data"}}</p>
+</body>
+</body>
+</html>
