@@ -1,22 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>#2 Template Basic</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Blog filter Page</h1>
     <!-- blog filter -->
-     <p><b>Title(Normal):</b>{{post.title}}</p>
-     <p><b>Upper_Case:</b>{{post.title|upper}}</p>
-     <p><b>Lower_case:</b>{{post.title|lower}}</p>
-     <p><b>Capital:</b>{{post.title|capfirst}}</p>
-     <p><b>Title_case:</b>{{post.title|title}}</p>
-     <p><b>Truncate_char:</b>{{post.title|truncatechars:20}}</p>
-     <p><b>Truncate_words:</b>{{post.title|truncatewords:2}}</p>
-     <p><b>Line_breaks:</b>{{post.title|linebreaks}}</p>
+    <p><b>Title(Normal):</b>{{post.title}}</p>
+    <p><b>Upper_Case:</b>{{post.title|upper}}</p>
+    <p><b>Lower_case:</b>{{post.title|lower}}</p>
+    <p><b>Capital:</b>{{post.title|capfirst}}</p>
+    <p><b>Title_case:</b>{{post.title|title}}</p>
+    <p><b>Truncate_char:</b>{{post.title|truncatechars:20}}</p>
+    <p><b>Truncate_words:</b>{{post.title|truncatewords:2}}</p>
+    <p><b>Line_breaks:</b>{{post.title|linebreaks}}</p>
+    <hr />
+    <p>Orginal Price:{{post.price}}</p>
+    <p><b>Orginal Price(+5):{{post.price|add:5}}</b></p>
+    <!-------- divisible by------>
+    {% if post.number|divisibleby:2 %}
+    <p>Number is divisible by 2: {{ post.number }}</p>
+    {% else %}
+    <p>{{ post.number }} is not divisible by 2</p>
+    {% endif %}
+    <hr>
+    <!-- list filter -->
+     <p><b>first tag:</b>{{post.tags|first}}</p>
+     <p><b>last tag:</b>{{post.tags|last}}</p>
+     <p><b>length of tag:</b>{{post.tags|length}}</p>
+     <p><b>slice tag:</b>{{post.tags|slice:2}}</p>
+     <p><b>join tag:</b>{{post.tags|join:","}}</p>
      <hr>
-     <P>Orginal Price:{{post.price}}</P>
-</body>
+     <!-- yes no and plural -->
+      <p>author available?:{{post.author|yesno:"yes,no,maybe"}}</p>
+      <p>comment count:{{post.comment_count}} comment{{post.comment_count|pluralize}}</p>
+    <hr>
+     <!-- encoding and formatting -->
+      <P>Title Encoding:{{post.title|urlencode}}</P>
+      <P>Float format example:{{123.87469876|floatformat:3}}</P>
+  </body>
 </html>
