@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Blog Page{% endblock %}
+
+{% block content %}
+<h1>Blog Us</h1>
+{% regroup students by class as grouped_students %}
+<ul>
+  {% for group in grouped_students %}
+    <li>
+      Class {{ group.grouper }}
+      <ul>
+        {% for student in group.list %}
+          <li>{{ student.name }}</li>
+        {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+</ul>
+<p>progress: {% widthratio 50 100 100 %}</p>
+<div><span>This is a</span><span> spaceless span</span></div>
+  {% filter upper%}
+  This text will be converted into uppercase
+  {% endfilter%}
+  {% for student in students%}
+   <P>{{student.name|lower}} in {{student.class|add:1}}</P>
+   {% endfor %}
+{% endblock %}
