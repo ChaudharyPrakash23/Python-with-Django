@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<section class="hero">
+    <div class="hero-content">
+        <span class="eyebrow">Web Developer</span>
+        <h1>Simple portfolio grid made with Django.</h1>
+        <p>Clean design, responsive layout, and easy navigation.</p>
+    </div>
+</section>
+<section class="projects" id="projects">
+    <div class="section-header">
+        <h2>Featured projects</h2>
+        <p>Real examples of modern web apps built with HTML, CSS, Django, and responsive layouts.</p>
+    </div>
+    <div class="project-grid">
+        <article class="project-card">
+            <img src="{% static 'images/project1.png' %}" alt="Portfolio project">
+            <div class="project-copy">
+                <h3>Portfolio project</h3>
+                <p>Personal branding site with project showcases, contact form, and responsive design.</p>
+            </div>
+        </article>
+        <article class="project-card">
+            <img src="{% static 'images/project2.png' %}" alt="E-commerce project">
+            <div class="project-copy">
+                <h3>E-commerce project</h3>
+                <p>Online store layout with product cards, shopping interface, and clean UI.</p>
+            </div>
+        </article>
+        <article class="project-card">
+            <img src="{% static 'images/project3.png' %}" alt="Blog project">
+            <div class="project-copy">
+                <h3>Blog project</h3>
+                <p>Content-focused blog design with article cards, category navigation, and easy reading.</p>
+            </div>
+        </article>
+        <article class="project-card">
+            <img src="{% static 'images/project4.png' %}" alt="Chat application project">
+            <div class="project-copy">
+                <h3>Chat application</h3>
+                <p>Real-time chat UI with modern card styling for conversations and user interaction.</p>
+            </div>
+        </article>
+    </div>
+</section>
+
+{% endblock %}
